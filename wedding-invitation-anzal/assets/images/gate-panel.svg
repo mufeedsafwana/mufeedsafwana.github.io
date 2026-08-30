@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" fill="none" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="doorGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8dcc8"/>
+      <stop offset="35%" stop-color="#b8956c"/>
+      <stop offset="70%" stop-color="#d4b896"/>
+      <stop offset="100%" stop-color="#8a7358"/>
+    </linearGradient>
+    <linearGradient id="doorDepth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f8fb"/>
+      <stop offset="40%" stop-color="#e4ebf2"/>
+      <stop offset="100%" stop-color="#d5dee8"/>
+    </linearGradient>
+    <pattern id="geo" width="36" height="31" patternUnits="userSpaceOnUse">
+      <path d="M18 2 L32 15.5 L18 29 L4 15.5 Z" stroke="#1a3a52" stroke-width="0.3" fill="none" opacity="0.12"/>
+      <circle cx="18" cy="15.5" r="2.2" stroke="#b8956c" stroke-width="0.3" fill="none" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="400" fill="url(#doorDepth)"/>
+  <rect width="200" height="400" fill="url(#geo)"/>
+  <rect x="10" y="10" width="180" height="380" stroke="url(#doorGold)" stroke-width="1.4" fill="none" rx="2"/>
+  <rect x="16" y="16" width="168" height="368" stroke="url(#doorGold)" stroke-width="0.4" fill="none" opacity="0.45"/>
+  <path d="M40 90 Q100 30 160 90" stroke="url(#doorGold)" stroke-width="1.1" fill="none" opacity="0.65"/>
+  <path d="M50 90 Q100 45 150 90" stroke="url(#doorGold)" stroke-width="0.5" fill="none" opacity="0.35"/>
+  <rect x="28" y="100" width="144" height="240" stroke="url(#doorGold)" stroke-width="0.7" fill="none" opacity="0.45" rx="1"/>
+  <path d="M28 100 Q40 100 40 112" stroke="url(#doorGold)" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <path d="M172 100 Q160 100 160 112" stroke="url(#doorGold)" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <path d="M28 340 Q40 340 40 328" stroke="url(#doorGold)" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <path d="M172 340 Q160 340 160 328" stroke="url(#doorGold)" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <path d="M70 360 Q100 345 130 360" stroke="url(#doorGold)" stroke-width="0.7" fill="none" opacity="0.45"/>
+  <circle cx="100" cy="355" r="3" fill="#b8956c" opacity="0.55"/>
+</svg>

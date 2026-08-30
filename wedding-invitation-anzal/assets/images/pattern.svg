@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <pattern id="starlattice" width="60" height="52" patternUnits="userSpaceOnUse">
+      <path d="M30 4 L36 20 L52 20 L39 30 L44 46 L30 36 L16 46 L21 30 L8 20 L24 20 Z" fill="none" stroke="#b8956c" stroke-width="0.55" opacity="0.22"/>
+      <circle cx="30" cy="26" r="5" fill="none" stroke="#1a3a52" stroke-width="0.45" opacity="0.18"/>
+      <path d="M0 52 L15 26 L30 52 M30 52 L45 26 L60 52" fill="none" stroke="#7a95a8" stroke-width="0.35" opacity="0.14"/>
+    </pattern>
+  </defs>
+  <rect width="120" height="120" fill="url(#starlattice)"/>
+</svg>
