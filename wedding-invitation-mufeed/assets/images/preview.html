@@ -1,216 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Preview Thumbnail</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700&family=Outfit:wght@300;400;500&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700&family=Outfit:wght@300;400;500&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html, body {
-            width: 1200px;
-            height: 630px;
-            overflow: hidden;
-        }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            position: relative;
-            background:
-                url('pattern.svg'),
-                radial-gradient(ellipse at 50% 12%, rgba(168, 191, 206, 0.35) 0%, transparent 50%),
-                radial-gradient(ellipse at 10% 90%, rgba(184, 149, 108, 0.18) 0%, transparent 40%),
-                radial-gradient(ellipse at 90% 85%, rgba(122, 149, 168, 0.22) 0%, transparent 42%),
-                linear-gradient(180deg, #eef3f7 0%, #f2f5f8 48%, #e4eaf0 100%);
-            background-size: 120px 120px, auto, auto, auto, auto;
-        }
+      body {
+        font-family: "Outfit", sans-serif;
+        position: relative;
+        background:
+          url("pattern.svg"),
+          radial-gradient(
+            ellipse at 50% 12%,
+            rgba(168, 191, 206, 0.35) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 10% 90%,
+            rgba(184, 149, 108, 0.18) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at 90% 85%,
+            rgba(122, 149, 168, 0.22) 0%,
+            transparent 42%
+          ),
+          linear-gradient(180deg, #eef3f7 0%, #f2f5f8 48%, #e4eaf0 100%);
+        background-size:
+          120px 120px,
+          auto,
+          auto,
+          auto,
+          auto;
+      }
 
-        .glow {
-            position: absolute;
-            top: 42%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 520px;
-            height: 520px;
-            background: radial-gradient(circle, rgba(184, 149, 108, 0.22) 0%, transparent 68%);
-            pointer-events: none;
-        }
+      .glow {
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 520px;
+        height: 520px;
+        background: radial-gradient(
+          circle,
+          rgba(184, 149, 108, 0.22) 0%,
+          transparent 68%
+        );
+        pointer-events: none;
+      }
 
-        .floral {
-            position: absolute;
-            pointer-events: none;
-            opacity: 0.9;
-        }
+      .floral {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.9;
+      }
 
-        .floral-tl { top: 0; left: 0; width: 210px; }
-        .floral-tr { top: 0; right: 0; width: 210px; transform: scaleX(-1); }
-        .floral-bl { bottom: 0; left: 0; width: 175px; }
-        .floral-br { bottom: 0; right: 0; width: 175px; transform: scaleX(-1); }
+      .floral-tl {
+        top: 0;
+        left: 0;
+        width: 210px;
+      }
+      .floral-tr {
+        top: 0;
+        right: 0;
+        width: 210px;
+        transform: scaleX(-1);
+      }
+      .floral-bl {
+        bottom: 0;
+        left: 0;
+        width: 175px;
+      }
+      .floral-br {
+        bottom: 0;
+        right: 0;
+        width: 175px;
+        transform: scaleX(-1);
+      }
 
-        .frame-wrap {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      .frame-wrap {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        .card {
-            position: relative;
-            width: 680px;
-            padding: 42px 56px 38px;
-            text-align: center;
-            background: rgba(248, 251, 253, 0.9);
-            border: 1.5px solid rgba(184, 149, 108, 0.5);
-            box-shadow:
-                0 0 0 10px rgba(248, 251, 253, 0.4),
-                0 22px 56px rgba(14, 36, 56, 0.14),
-                inset 0 0 36px rgba(168, 191, 206, 0.08);
-        }
+      .card {
+        position: relative;
+        width: 680px;
+        padding: 42px 56px 38px;
+        text-align: center;
+        background: rgba(248, 251, 253, 0.9);
+        border: 1.5px solid rgba(184, 149, 108, 0.5);
+        box-shadow:
+          0 0 0 10px rgba(248, 251, 253, 0.4),
+          0 22px 56px rgba(14, 36, 56, 0.14),
+          inset 0 0 36px rgba(168, 191, 206, 0.08);
+      }
 
-        .corner {
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            border-color: #b8956c;
-            border-style: solid;
-            opacity: 0.85;
-        }
+      .corner {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-color: #b8956c;
+        border-style: solid;
+        opacity: 0.85;
+      }
 
-        .corner-tl { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
-        .corner-tr { top: 10px; right: 10px; border-width: 2px 2px 0 0; }
-        .corner-bl { bottom: 10px; left: 10px; border-width: 0 0 2px 2px; }
-        .corner-br { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
+      .corner-tl {
+        top: 10px;
+        left: 10px;
+        border-width: 2px 0 0 2px;
+      }
+      .corner-tr {
+        top: 10px;
+        right: 10px;
+        border-width: 2px 2px 0 0;
+      }
+      .corner-bl {
+        bottom: 10px;
+        left: 10px;
+        border-width: 0 0 2px 2px;
+      }
+      .corner-br {
+        bottom: 10px;
+        right: 10px;
+        border-width: 0 2px 2px 0;
+      }
 
-        .seal {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 18px;
-            display: block;
-            filter: drop-shadow(0 4px 14px rgba(14, 36, 56, 0.16));
-        }
+      .seal {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 18px;
+        display: block;
+        filter: drop-shadow(0 4px 14px rgba(14, 36, 56, 0.16));
+      }
 
-        .bismillah {
-            font-family: 'Amiri', serif;
-            font-size: 28px;
-            color: #1a3a52;
-            direction: rtl;
-            margin-bottom: 14px;
-            letter-spacing: 0.02em;
-        }
+      .bismillah {
+        font-family: "Amiri", serif;
+        font-size: 28px;
+        color: #1a3a52;
+        direction: rtl;
+        margin-bottom: 14px;
+        letter-spacing: 0.02em;
+      }
 
-        .divider {
-            width: 220px;
-            margin: 0 auto 16px;
-            display: block;
-            opacity: 0.92;
-        }
+      .divider {
+        width: 220px;
+        margin: 0 auto 16px;
+        display: block;
+        opacity: 0.92;
+      }
 
-        .eyebrow {
-            font-size: 11px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #7a95a8;
-            margin-bottom: 8px;
-            font-weight: 400;
-        }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #7a95a8;
+        margin-bottom: 8px;
+        font-weight: 400;
+      }
 
-        .nikkah {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #b8956c;
-            font-weight: 600;
-            margin-bottom: 22px;
-        }
+      .nikkah {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #b8956c;
+        font-weight: 600;
+        margin-bottom: 22px;
+      }
 
-        .names {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
-            font-weight: 600;
-            color: #152033;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            line-height: 1.2;
-            margin-bottom: 6px;
-        }
+      .names {
+        font-family: "Playfair Display", serif;
+        font-size: 46px;
+        font-weight: 600;
+        color: #152033;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
 
-        .amp {
-            display: block;
-            font-family: 'Parisienne', cursive;
-            font-size: 52px;
-            color: #b8956c;
-            text-transform: none;
-            letter-spacing: 0;
-            font-weight: 400;
-            margin: 2px 0 4px;
-            line-height: 1;
-        }
+      .amp {
+        display: block;
+        font-family: "Parisienne", cursive;
+        font-size: 52px;
+        color: #b8956c;
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 400;
+        margin: 2px 0 4px;
+        line-height: 1;
+      }
 
-        .date {
-            font-family: 'Playfair Display', serif;
-            font-size: 17px;
-            letter-spacing: 2px;
-            color: #4a5568;
-            margin-top: 18px;
-        }
+      .date {
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        letter-spacing: 2px;
+        color: #4a5568;
+        margin-top: 18px;
+      }
 
-        .hijri {
-            font-family: 'Playfair Display', serif;
-            font-size: 14px;
-            letter-spacing: 1.5px;
-            color: #7a95a8;
-            margin-top: 6px;
-            font-style: italic;
-        }
+      .hijri {
+        font-family: "Playfair Display", serif;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        color: #7a95a8;
+        margin-top: 6px;
+        font-style: italic;
+      }
 
-        .gold-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 760px;
-            height: 760px;
-            opacity: 0.12;
-            pointer-events: none;
-        }
+      .gold-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 760px;
+        height: 760px;
+        opacity: 0.12;
+        pointer-events: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="glow"></div>
-    <img src="gold-frame.svg" alt="" class="gold-ring" aria-hidden="true">
-    <img src="floral-corner.svg" alt="" class="floral floral-tl" aria-hidden="true">
-    <img src="floral-corner.svg" alt="" class="floral floral-tr" aria-hidden="true">
-    <img src="floral-bottom.svg" alt="" class="floral floral-bl" aria-hidden="true">
-    <img src="floral-bottom.svg" alt="" class="floral floral-br" aria-hidden="true">
+    <img src="gold-frame.svg" alt="" class="gold-ring" aria-hidden="true" />
+    <img
+      src="floral-corner.svg"
+      alt=""
+      class="floral floral-tl"
+      aria-hidden="true"
+    />
+    <img
+      src="floral-corner.svg"
+      alt=""
+      class="floral floral-tr"
+      aria-hidden="true"
+    />
+    <img
+      src="floral-bottom.svg"
+      alt=""
+      class="floral floral-bl"
+      aria-hidden="true"
+    />
+    <img
+      src="floral-bottom.svg"
+      alt=""
+      class="floral floral-br"
+      aria-hidden="true"
+    />
 
     <div class="frame-wrap">
-        <div class="card">
-            <span class="corner corner-tl"></span>
-            <span class="corner corner-tr"></span>
-            <span class="corner corner-bl"></span>
-            <span class="corner corner-br"></span>
+      <div class="card">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
 
-            <img src="gate-seal.svg" alt="" class="seal" aria-hidden="true">
-            <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-            <img src="gate-divider.svg" alt="" class="divider" aria-hidden="true">
+        <img src="gate-seal.svg" alt="" class="seal" aria-hidden="true" />
+        <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <img src="gate-divider.svg" alt="" class="divider" aria-hidden="true" />
 
-            <p class="eyebrow">Wedding Invitation</p>
-            <p class="nikkah">Nikah Mubarak</p>
+        <p class="eyebrow">Wedding Invitation</p>
+        <p class="nikkah">Nikah Mubarak</p>
 
-            <h1 class="names">
-                Anzal Ishaq
-                <span class="amp">&</span>
-                Nashva Nazrin
-            </h1>
+        <h1 class="names">
+          Mufeed Muhammed
+          <span class="amp">&</span>
+          Safwana TM
+        </h1>
 
-            <img src="gate-divider.svg" alt="" class="divider" aria-hidden="true">
-            <p class="date">Thursday, 6th August 2026</p>
-            <p class="hijri">22nd Safar 1448 AH</p>
-        </div>
+        <img src="gate-divider.svg" alt="" class="divider" aria-hidden="true" />
+        <p class="date">Thursday, 6th August 2026</p>
+        <p class="hijri">22nd Safar 1448 AH</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
