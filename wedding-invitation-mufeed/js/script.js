@@ -397,7 +397,7 @@ const CALENDAR_EVENTS = {
     filename: "mufeed-safwana-nikah.ics",
     title: "Nikah Ceremony — Mufeed Muhammed & Safwana TM",
     description:
-      "Nikah ceremony of Mufeed Muhammed & Safwana TM.\nhttps://www.google.com/maps/place/Mohiyuddin+Juma+Masjid+and+Jamaliya+Madrasa/@11.8956945,75.3499819,1188m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3ba43d6680152409:0xefc5253a76553d7f!8m2!3d11.8956945!4d75.3499819!16s%2Fg%2F1wv_qnp7?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D",
+      "Nikah ceremony of Mufeed Muhammed & Safwana TM.\nhttps://maps.app.goo.gl/39VHGMGsg3P3TMnu5",
     location: "Mohiyuddin Juma Masjid, Alavil, Kannur",
     start: [2026, 9, 10, 10, 30],
     end: [2026, 9, 10, 11, 0],
